@@ -1,0 +1,42 @@
+# Productivity Agent Configuration
+
+# Code Pipeline Settings
+code_pipeline:
+  max_retries: 3
+  lint_tool: "ruff"
+  lint_command: "ruff check"
+  include_patterns:
+    - "*.py"
+  exclude_patterns:
+    - "__pycache__"
+    - ".venv"
+    - ".git"
+  doc_template: |
+    # {filename}
+    
+    ## Overview
+    {overview}
+    
+    ## Functions
+    {functions}
+    
+    ## Classes
+    {classes}
+
+# Content Pipeline Settings
+content_pipeline:
+  max_tokens: 2048
+  research_focus: "comprehensive and authoritative"
+  template_format: "markdown"
+
+# Claude Model Settings
+claude:
+  model: "claude-opus-4-5"
+  max_tokens_code: 4096
+  max_tokens_content: 2048
+
+# Paths
+paths:
+  project_root: "./"
+  output_dir: "./output"
+  logs_dir: "./logs"
